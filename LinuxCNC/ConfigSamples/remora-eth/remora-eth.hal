@@ -9,9 +9,9 @@ loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EM
 
 # estop and SPI comms enable and feedback
 
-	net user-enable-out		<= iocontrol.0.user-enable-out		=> remora.SPI-enable
-	net user-request-enable <= iocontrol.0.user-request-enable	=> remora.SPI-reset
-	net remora-status 		<= remora.SPI-status 				=> iocontrol.0.emc-enable-in
+	net user-enable-out		<= iocontrol.0.user-enable-out		=> remora.enable
+	net user-request-enable <= iocontrol.0.user-request-enable	=> remora.reset
+	net remora-status 		<= remora.status 				=> iocontrol.0.emc-enable-in
 
 
 # add the remora and motion functions to threads
